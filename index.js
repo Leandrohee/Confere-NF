@@ -1,4 +1,5 @@
 const inputUpload = document.querySelector(".recebe-pdf");
+const btn = document.getElementById("btn");
 pdfTeste = '/pdfTeste.pdf'
 var pdfLoad
 var paginas = []
@@ -23,8 +24,8 @@ function lerPdf(pdfLoad){
     })
 }        
 
-//AQUI FAZ O UPLOAD NO PDF E CONVERTE ELE PARA UM FORMATO QUE O PDF.JS LEIA
-function loadPdf(){                                               
+//AQUI FAZ O UPLOAD NO PDF E CONVERTE ELE PARA UM FORMATO QUE O PDF.JS LEIA (arraybuffer)
+inputUpload.addEventListener("change",()=>{
     const fr = new FileReader();
 
     fr.readAsArrayBuffer(inputUpload.files[0])
@@ -33,12 +34,18 @@ function loadPdf(){
         pdfLoad = pdfjsLib.getDocument(fr.result)
         lerPdf(pdfLoad)
     })
-}
+})
+
 
 
 //AQUI
 function conteudoPdf(paginas){
-    console.log(paginas)
+    btn.addEventListener("click",()=>{
+        conferePedido(paginas)
+        
+        //RESULTADOS
+        console.log(conferePedido(paginas))
+    })
 }
 
 

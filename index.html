@@ -5,15 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conferência de notas fiscais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
     <header class="cabecalho"></header>
     <main classe="conteudo">
-        <input type="file" accept=".pdf" class="recebe-pdf" onchange="loadPdf()" >
+        <label>
+            <P>Selecione o arquivo NF (PDF)</P>
+            <input type="file" placeholder="xx" accept=".pdf" class="recebe-pdf">
+        </label>
+        <button type="button" name="myButton" id="btn" autofocus>VERIFICAR</button>
+        <section>
+            <table>
+                <h3 class="titulo-tabela">RESULTADOS</h3>
+                <tbody>
+                <tr class="linha-tabela">
+                    <td class="coluna-item">PEDIDO</td>
+                    <td class="coluna-resultado" >ok</td>
+                </tr>
+                <tr class="linha-tabela">
+                    <td class="coluna-item">O.S</td>
+                    <td class="coluna-resultado" >-</td>
+                </tr>   
+                </tbody>
+
+            </table>
+        </section>
     </main>
     <footer classe="rodape"></footer>
     <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.7.107/build/pdf.min.js"></script>
-    <script src="./index2.js" ></script>
+    <script src="./index.js" ></script>
+    <script src="/conferencias/conferePedido.js" ></script>
 </body>
 </html>

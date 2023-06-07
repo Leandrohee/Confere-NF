@@ -3,7 +3,7 @@ body{
     padding: 0;
 }
 header{
-    background-color: aliceblue;
+    background-color: white;
     height: 10vh;
 }
 main{
@@ -11,4 +11,71 @@ main{
     font-family: 'Courier New', Courier, monospace;
     font-size: 2rem;
     font-weight: 700;
+    
+}
+input{
+display: none;
+}
+label{
+    display: block;
+    cursor: pointer;
+    background-color: aquamarine;
+    height: 5rem;
+    width: 30rem;
+    margin: 0 auto;
+    border: 2px black solid;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+}
+label:hover{
+    background-color: aquamarine;
+    border: 2px black solid;
+    background-color: #000000;
+    color: white;
+}
+button{
+    display: inline-block;
+    margin: 3rem auto;
+    color: #ffffff;
+	background-color: #526d82;
+	font-size: 19px;
+	border: 0px solid #526d82;
+	border-radius: 15px;
+	padding: 15px 50px;
+	cursor: pointer
+}
+button:hover {
+    color: #000000;
+    background-color: #9db2bf;
+}
+section{
+    background-color: aliceblue;
+    padding: 1rem;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout:fixed;
+}
+.titulo-tabela{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+}
+.coluna-item{
+    width: 40%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+}
+.coluna-resultado{
+    border-right: solid 1px black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: left;
+}
+td{
+    border: solid 1px black;
+    padding: 0.5rem;
 }
