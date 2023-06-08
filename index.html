@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <header class="cabecalho"></header>
+    <header class="cabecalho">
+    </header>
     <main classe="conteudo">
-        <label>
+        <label id="label-input">
             <P>Selecione o arquivo NF (PDF)</P>
             <input type="file" placeholder="xx" accept=".pdf" class="recebe-pdf">
         </label>
+        <label id="label-legenda">teste</label>
         <button type="button" name="myButton" id="btn" autofocus>VERIFICAR</button>
         <section>
             <table>
@@ -24,12 +26,20 @@
                 <tbody>
                 <tr class="linha-tabela">
                     <td class="coluna-item">PEDIDO</td>
-                    <td class="coluna-resultado" >ok</td>
+                    <td class="coluna-resultado" data-pedido >-</td>
                 </tr>
                 <tr class="linha-tabela">
                     <td class="coluna-item">O.S</td>
-                    <td class="coluna-resultado" >-</td>
-                </tr>   
+                    <td class="coluna-resultado" data-os>-</td>
+                </tr>
+                <tr class="linha-tabela">
+                    <td class="coluna-item">NOTA DE EMPENHO</td>
+                    <td class="coluna-resultado" data-ne>-</td>
+                </tr> 
+                <tr class="linha-tabela">
+                    <td class="coluna-item">CONTRATO</td>
+                    <td class="coluna-resultado" data-contrato>-</td>
+                </tr>          
                 </tbody>
 
             </table>
@@ -37,7 +47,12 @@
     </main>
     <footer classe="rodape"></footer>
     <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.7.107/build/pdf.min.js"></script>
+    <script src="./conferencias/Fornecedores.js"></script>
     <script src="./conferencias/conferePedido.js" ></script>
+    <script src="./conferencias/confereOs.js"></script>
+    <script src="./conferencias/confereNe.js"></script>
+    <script src="./conferencias/confereContrato.js"></script>
+    <script src="./conferencias/mostraResultado.js"></script>
     <script src="./index.js" ></script>
     <!-- <script src="/conferencias/conferePedido.js" ></script> -->
 </body>

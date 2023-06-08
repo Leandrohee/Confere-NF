@@ -1,4 +1,5 @@
 const inputUpload = document.querySelector(".recebe-pdf");
+const space = "                    "
 const btn = document.getElementById("btn");
 pdfTeste = '/pdfTeste.pdf'
 var pdfLoad
@@ -34,6 +35,11 @@ inputUpload.addEventListener("change",()=>{
         pdfLoad = pdfjsLib.getDocument(fr.result)
         lerPdf(pdfLoad)
     })
+
+ //INFORMANDO O DOCUMENTO SELECIONADO   
+    const legendaNf = document.querySelector("#label-legenda")
+    legendaNf.innerHTML = inputUpload.files[0].name;
+    legendaNf.style.cssText = 'display: block;'
 })
 
 
@@ -42,9 +48,17 @@ inputUpload.addEventListener("change",()=>{
 function conteudoPdf(paginas){
     btn.addEventListener("click",()=>{
         conferePedido(paginas)
+        confereOs(paginas)
+        confereNe(paginas)
+        confereContrato(paginas)
         
         //RESULTADOS
-        console.log(conferePedido(paginas))
+        mostraResultado(
+            conferePedido(paginas),
+            confereOs(paginas),
+            confereNe(paginas),
+            confereContrato(paginas)
+        )
     })
 }
 

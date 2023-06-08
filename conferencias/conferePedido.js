@@ -39,7 +39,7 @@ function conferePedido(paginas){
         
             if(matchesPedNaNf){
                 if(matchesPedNaNf.length == 1){
-                    resultadoPedido = `OK                    (${pedPadrao})`
+                    resultadoPedido = `OK (${pedPadrao})`
                 }
                 else if (matchesPedNaNf.length > 1){
                     resultadoPedido = "Mais de 1 n° pedido encontrdos na NF"
