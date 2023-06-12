@@ -4,15 +4,42 @@ var fornecedores = {
         ne: /2023NE[0]{0,5}12/gi,
         contrato: /29\/2022/gi,
         linhas: {
-            gmUtilitario: /s10\s/i,                         
-            vw: /vw/i,
-            fordUtiliraio: /ford/i,
-            mbUtilirio: /sprinter/i,
-            mbPesado: /atego|axor|accelo/i,
-            citroen :/citroen/i,
-            jeep :/jeep/i,
-            toyota :/toyota/i,
-            scania :/scania/i,
+            gmUtilitario: {
+               regex: /s10\s/i,
+               desconto: "65,00%"   
+            },                        
+            vw:{
+                regex:/vw/i,
+                desconto:"49,10%",
+            },
+            fordUtiliraio: {
+                regex:/ford/i,
+                desconto:"43,10%",
+            },
+            mbUtilirio: {
+                regex:/sprinter/i,
+                desconto:"47,51%",
+            },
+            mbPesado: {
+                regex:/atego|axor|accelo/i,
+                desconto:"39,91%",
+            },
+            citroen :{
+                regex:/citroen/i,
+                desconto:"43,10%",
+            },
+            jeep :{
+                regex:/jeep/i,
+                desconto:"49,10%",
+            },
+            toyota :{
+                regex:/toyota/i,
+                desconto:"36,10%",
+            },
+            scania :{
+                regex:/scania/i,
+                desconto:"36,10%",
+            }
         }
     },
     parts: {
@@ -20,10 +47,22 @@ var fornecedores = {
         ne: /2023NE[0]{0,5}04/gi,
         contrato: /30\/2021/gi,
         linhas: {
-            honda: /honda/i,
-            yamaha:/yamaha/i,
-            renault: /renault/i,
-            fordPesado: /cargo/i,
+            honda: {
+                regex:/honda/i,
+                desconto:"45,00%",
+            },
+            yamaha:{
+                regex:/yamaha/i,
+                desconto:"55,00%",
+            },
+            renault: {
+                regex:/renault/i,
+                desconto:"58,00%",
+            },
+            fordPesado: {
+                regex:/cargo/i,
+                desconto:"59,00%",
+            }
         }
     },
     alberto: {
@@ -31,8 +70,14 @@ var fornecedores = {
         ne: /2023NE[0]{0,5}67/gi,
         contrato: /27\/2021/gi,
         linhas: {
-            agrale:/agrale/i,
-            iveco: /iveco/i
+            agrale:{
+                regex:/agrale/i,
+                desconto:"",
+            },
+            iveco: {
+                regex:/iveco/i,
+                desconto:"52,00%",
+            }
         }
     },
     erenice: {
@@ -40,7 +85,10 @@ var fornecedores = {
         ne: /2023NE[0]{0,5}06/gi,
         contrato: /37\/2018/gi,
         linhas: {
-            bmw: /bmw/i
+            bmw: {
+                regex:/bmw/i,
+                desconto:"07,00%",
+            }
         }
     },
     robson: {
@@ -48,9 +96,18 @@ var fornecedores = {
         ne: /2023NE[0]{0,5}03/gi,
         contrato: /29\/2021/gi,
         linhas: {
-            gmLeve: /cruze/i,
-            mitsubishi: /mitsubishi/i,
-            fiat: /fiat/i
+            gmLeve: {
+                regex:/cruze/i,
+                desconto:"65,00%",
+            },
+            mitsubishi: {
+                regex:/mitsubishi/i,
+                desconto:"61,00%",
+            },
+            fiat: {
+                regex:/fiat/i,
+                desconto:"69,20%",
+            }
         }
     }
 }
