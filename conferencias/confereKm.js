@@ -27,10 +27,10 @@ function confereKm(){
             variaveisKm[3] = kmPadrao.replace("."," ")
 
             for(let i=0; i < 4 ;i++){
-                if(paginasMenosPrimeira.match(variaveisKm[i])){
+                if(primeiraPagina.match(variaveisKm[i])){
                     //CASO ENCONTRAR 2 VEZES A MESMA VARIAVEL DAR O PUSH 2 VEZES
-                    for (let a = 0; a < (paginasMenosPrimeira.match(variaveisKm[i]).length) ; a++){
-                        matchKmNaNf.push(paginasMenosPrimeira.match(variaveisKm[i])[a])  
+                    for (let a = 0; a < (primeiraPagina.match(variaveisKm[i]).length) ; a++){
+                        matchKmNaNf.push(primeiraPagina.match(variaveisKm[i])[a])  
                     }
                 } 
             }

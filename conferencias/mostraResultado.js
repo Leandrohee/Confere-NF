@@ -1,4 +1,4 @@
-function mostraResultado(pedido,os,ne,contrato,prefixo,placa,desconto,marca,km){
+function mostraResultado(pedido,os,ne,contrato,prefixo,placa,desconto,marca,km,ano,codigo,valor){
     //PEDIDO
     const tdPedido = document.querySelector("[data-pedido]");
     tdPedido.innerHTML = pedido;
@@ -53,5 +53,23 @@ function mostraResultado(pedido,os,ne,contrato,prefixo,placa,desconto,marca,km){
      tdKm.innerHTML = km;
      km.slice(0,2) == "OK" ? tdKm.style.cssText = 'background-color: #00DFA2' : tdKm.style.cssText = 'background-color: #FF616D'
      km == "-" ? tdKm.style.cssText = 'background-color: #ECF9FF' : ""
+    
+     //ANO
+     const tdAno = document.querySelector("[data-ano]");
+     tdAno.innerHTML = ano;
+     ano.slice(0,2) == "OK" ? tdAno.style.cssText = 'background-color: #00DFA2' : tdAno.style.cssText = 'background-color: #FF616D'
+     ano == "-" ? tdAno.style.cssText = 'background-color: #ECF9FF' : ""
+    
+     //CODIGO
+     const tdCodigos = document.querySelector("[data-codigo]");
+     tdCodigos.innerHTML = codigo;
+     codigo.slice(0,2) == "OK" ? tdCodigos.style.cssText = 'background-color: #00DFA2' : tdCodigos.style.cssText = 'background-color: #FF616D'
+     codigo == "-" ? tdCodigos.style.cssText = 'background-color: #ECF9FF' : ""
+    
+     //VALOR
+     const tdValor = document.querySelector("[data-valor]");
+     tdValor.innerHTML = valor;
+     valor.slice(0,2) == "OK" ? tdValor.style.cssText = 'background-color: #00DFA2' : tdValor.style.cssText = 'background-color: #FF616D'
+     valor == "-" ? tdValor.style.cssText = 'background-color: #ECF9FF' : ""
     
 }

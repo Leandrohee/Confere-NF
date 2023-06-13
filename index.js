@@ -41,7 +41,7 @@ inputUpload.addEventListener("change",()=>{
     legendaNf.innerHTML = inputUpload.files[0].name;
     legendaNf.style.cssText = 'display: block;'
 
-    mostraResultado("-","-","-","-","-","-","-","-","-","-")
+    mostraResultado("-","-","-","-","-","-","-","-","-","-","-","-")
 })
 
 
@@ -58,6 +58,9 @@ function conteudoPdf(paginas){
         confereDesconto(paginas)
         confereMarca(paginas)
         confereKm(paginas)
+        confereAno(paginas)
+        confereCodigo(paginas)
+        confereValor(paginas)
 
         
         //RESULTADOS
@@ -70,7 +73,10 @@ function conteudoPdf(paginas){
             conferePlaca(paginas),
             confereDesconto(paginas),
             confereMarca(paginas),
-            confereKm(paginas)
+            confereKm(paginas),
+            confereAno(paginas),
+            confereCodigo(paginas),
+            confereValor(paginas)
         )
     })
 }

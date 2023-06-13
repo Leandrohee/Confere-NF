@@ -28,13 +28,20 @@ function confereDesconto(){
 
             
 
-            variaveisDesconto[0] = descontoPadrao                                 //49,21% || 50,00%
+            variaveisDesconto[0] = descontoPadrao                                    //49,21% || 50,00%
             variaveisDesconto[1] = new RegExp(descontoPadrao.replace(",","\\."))     //49.21% || 50.00%
             variaveisDesconto[2] = descontoPadrao.replace(/,\d{2}/g,"")              //49% || 50%
             variaveisDesconto[3] = descontoPadrao.replace(/,\d{2}/g,",0")            //49,2% || 50,0%
             variaveisDesconto[4] = descontoPadrao.replace(/,\d{2}/g,".0")            //49.2% || 50.0%
 
-            for(let i=0; i<5; i++){
+            if(descontoPadrao[0] == 0){
+                variaveisDesconto[5] = descontoPadrao.slice(1)                         //7,00%
+                variaveisDesconto[6] = descontoPadrao.replaceAll(/[0,]/g,"")           //7%
+            }
+
+            console.log(variaveisDesconto)
+
+            for(let i=0; i<7; i++){
                 if(primeiraPagina.match(variaveisDesconto[i])){
                     for(let a=0; a<(primeiraPagina.match(variaveisDesconto[i]).length); a++){
                         matchDescontoNaNf.push(primeiraPagina.match(variaveisDesconto[i])[a])
@@ -60,7 +67,7 @@ function confereDesconto(){
             }
     }
     catch{
-        resultadoDesconto=`Desconto com problema`
+        resultadoDesconto=`Desconto com problema (catch)`
     }
 
     return resultadoDesconto
