@@ -1,4 +1,4 @@
-function confereValor(){
+function confereValor(paginas){
     var primeiraPagina = paginas[0]
     var nPaginas = paginas.length
     var paginasMenosPrimeira = ""
@@ -71,7 +71,7 @@ function confereValor(){
                         resultadoValor = `OK  (R$ ${valorEsperado.toFixed(2)}) `
                     }
                     else{
-                        resultadoValor = `Valor esperado: ${valorEsperado} valor da NF: ${valorComDescontoPadrao}`
+                        resultadoValor = `Valor esperado: R$ ${valorEsperado.toFixed(2)} valor da NF: R$ ${valorComDescontoPadrao}`
                     }
                 }
                 else{

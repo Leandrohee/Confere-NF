@@ -1,4 +1,4 @@
-function confereMarca(){
+function confereMarca(paginas){
     var primeiraPagina = paginas[0]
     var resultadoMarca
     var matchFornecedorNaNf, matchLinhaNaNf, regexFornecedor, regexLinhas

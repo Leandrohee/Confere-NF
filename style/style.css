@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: #ECF9FF;
+    background-color: #DAF5FF;
 }
 main{
     text-align: center;
@@ -53,12 +54,14 @@ button:hover {
     background-color: #000;
 }
 section{
-    padding: 1rem;
+    padding: 2rem 7rem;
 }
 table{
     width: 100%;
     border-collapse: collapse;
     table-layout:fixed;
+    border: 0.2rem solid black;
+    box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);;
 }
 .titulo-tabela{
     font-weight: 700;
@@ -66,7 +69,7 @@ table{
     margin: 0 auto 1rem auto;
 }
 .coluna-item{
-    width: 40%;
+    width: 30%;
     font-weight: 700;
     font-size: 1.6rem;
 }

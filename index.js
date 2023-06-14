@@ -3,10 +3,11 @@ const space = "                    "
 const btn = document.getElementById("btn");
 pdfTeste = '/pdfTeste.pdf'
 var pdfLoad
-var paginas = []
+var paginasPdf
 
 //AQUI COMEÇA O PDF.JS
-function lerPdf(pdfLoad){                                               
+function lerPdf(pdfLoad){ 
+    const paginas = []                                     
     pdfLoad.promise.then((pdf)=>{
         var nPaginas = pdf.numPages
 
@@ -18,7 +19,7 @@ function lerPdf(pdfLoad){
                     })
                     paginas[i-1] = paginas[i-1].join(' ')
 
-                    nPaginas == i ? conteudoPdf(paginas): ""
+                    nPaginas == i ? paginasPdf =  paginas: ""
                 })
             })
         }
@@ -47,39 +48,38 @@ inputUpload.addEventListener("change",()=>{
 
 
 //AQUI
-function conteudoPdf(paginas){
     btn.addEventListener("click",()=>{
-        conferePedido(paginas)
-        confereOs(paginas)
-        confereNe(paginas)
-        confereContrato(paginas)
-        conferePrefixo(paginas)
-        conferePlaca(paginas)
-        confereDesconto(paginas)
-        confereMarca(paginas)
-        confereKm(paginas)
-        confereAno(paginas)
-        confereCodigo(paginas)
-        confereValor(paginas)
+        // conferePedido(paginas)
+        // confereOs(paginas)
+        // confereNe(paginas)
+        // confereContrato(paginas)
+        // conferePrefixo(paginas)
+        // conferePlaca(paginas)
+        // confereDesconto(paginas)
+        // confereMarca(paginas)
+        // confereKm(paginas)
+        // confereAno(paginas)
+        // confereCodigo(paginas)
+        // confereValor(paginas)
 
         
         //RESULTADOS
         mostraResultado(
-            conferePedido(paginas),
-            confereOs(paginas),
-            confereNe(paginas),
-            confereContrato(paginas),
-            conferePrefixo(paginas),
-            conferePlaca(paginas),
-            confereDesconto(paginas),
-            confereMarca(paginas),
-            confereKm(paginas),
-            confereAno(paginas),
-            confereCodigo(paginas),
-            confereValor(paginas)
+            conferePedido(paginasPdf),
+            confereOs(paginasPdf),
+            confereNe(paginasPdf),
+            confereContrato(paginasPdf),
+            conferePrefixo(paginasPdf),
+            conferePlaca(paginasPdf),
+            confereDesconto(paginasPdf),
+            confereMarca(paginasPdf),
+            confereKm(paginasPdf),
+            confereAno(paginasPdf),
+            confereCodigo(paginasPdf),
+            confereValor(paginasPdf)
         )
     })
-}
+
 
 
 

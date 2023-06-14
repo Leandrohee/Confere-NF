@@ -1,4 +1,4 @@
-function confereKm(){
+function confereKm(paginas){
     var primeiraPagina = paginas[0]
     var nPaginas = paginas.length
     var paginasMenosPrimeira = ""

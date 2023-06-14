@@ -1,4 +1,4 @@
-function confereDesconto(){
+function confereDesconto(paginas){
     var primeiraPagina = paginas[0]
     var nPaginas = paginas.length
     var paginasMenosPrimeira = ""
@@ -38,8 +38,6 @@ function confereDesconto(){
                 variaveisDesconto[5] = descontoPadrao.slice(1)                         //7,00%
                 variaveisDesconto[6] = descontoPadrao.replaceAll(/[0,]/g,"")           //7%
             }
-
-            console.log(variaveisDesconto)
 
             for(let i=0; i<7; i++){
                 if(primeiraPagina.match(variaveisDesconto[i])){

@@ -1,4 +1,4 @@
-function confereCodigo(){
+function confereCodigo(paginas){
     var primeiraPagina = paginas[0]
     var nPaginas = paginas.length
     var paginasMenosPrimeira = ""
