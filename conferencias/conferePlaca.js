@@ -2,7 +2,7 @@ function conferePlaca(paginas){
     var primeiraPagina = paginas[0]
     var nPaginas = paginas.length
     var paginasMenosPrimeira = ""
-    var regexPlaca = /placa\s?:\s[a-z]{3}\s[\d]{4}/gi
+    var regexPlaca = /placa\s?:\s[a-z]{3}\s[\d]{4}|placa\s?:\s[a-z]{3}\s\d[a-z]\d{2}/gi
     var matchPlacaNaOs, matchPlacaNaNf = []
     var placaPadrao, variaveisPlaca = [], regexVariaveisPlaca = []
     var resultadoPlaca

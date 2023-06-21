@@ -6,7 +6,7 @@ var fornecedores = {
         linhas: {
             gmUtilitario: {
                regex: /s10\s/i,
-               desconto: "65,00%"   
+               desconto: "47,51%"   
             },                        
             vw:{
                 regex:/vw/i,

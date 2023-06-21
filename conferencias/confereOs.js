@@ -28,12 +28,10 @@ function confereOs(paginas){
                     possiveisOs[0] = osPadrao.replace("/","-")                   // 927-2023
                     possiveisOs[1] = new RegExp(osPadrao.replace("/","\\."))     // 927.2023
                     possiveisOs[2] = osPadrao.replace("/"," ")                   // 927 2023
-                    possiveisOs[3] = osPadrao.replace(/\/\d{4}/," ") // 927
+                    possiveisOs[3] = osPadrao.replace(/\/\d{4}/," ")            // 927
                     possiveisOs[4] = osPadrao                                    // 927/2023
 
-
                     //TESTANDO TODOS AS POSSIVEIS OS E CONTANDO AS TENTATIVAS ENONTRADAS
-
                     for(i=0; i<5 ; i++){
                         if(primeiraPagina.match(possiveisOs[i])){
                             matchesOsNaNf.push(primeiraPagina.match(possiveisOs[i]))
@@ -46,7 +44,7 @@ function confereOs(paginas){
                         resultadoOs = `OK (${osPadrao})`
                     }
                     else if(contOsNaNf > 1){
-                        resultadoOs = `Encontrado mais de 1 O.S na NF: ${matchesOsNaNfs}`
+                        resultadoOs = `Encontrado mais de 1 O.S na NF: ${matchesOsNaNf}`
                     }
                     else{
                         resultadoOs = ` Não econtrado a O.S ${osPadrao} na NF`

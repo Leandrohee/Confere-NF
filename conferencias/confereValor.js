@@ -33,6 +33,7 @@ function confereValor(paginas){
                 valorComDescontoPadrao = valorComDescontoPadrao.replace(".","")
                 valorComDescontoPadrao = Number(valorComDescontoPadrao.replace(",","."))
 
+                //FORMATANDO O DESCONTO PARA SER NUMERO POR EXEMPLO: (0.47)
                 Object.keys(fornecedores).forEach(forn=>{
                     Object.keys(fornecedores[forn].linhas).forEach(linha =>{
                         if (primeiraPagina.match(fornecedores[forn].nome) && primeiraPagina.match(fornecedores[forn].linhas[linha].regex)){
@@ -43,7 +44,7 @@ function confereValor(paginas){
                     })
                 })
                 
-
+                //FORMANDO O VALOR ACHADO NA AUDATEX (matchValorAud) EM "valorPadrao"
                 for(let i= 0; i< nCodigos; i++){
                     matchValorAud[i] = matchValorAud[i].replaceAll(/0,00/g,"")
                     matchValorAud[i] = matchValorAud[i].replace(" ","-") 
@@ -56,6 +57,7 @@ function confereValor(paginas){
                         }
                     }
 
+                    //PROCURANDO SE OS VALORES FORMATADOS DA AUDATEX ENCONTRAM-SE NA NF
                     if(primeiraPagina.match(valorPadrao[i])){
                         matchValorNf.push(primeiraPagina.match(valorPadrao[i])[0])
                     }
@@ -64,6 +66,7 @@ function confereValor(paginas){
                     }
                 }
 
+                //SE TODOS OS VALORES DA AUDATEX ENCONTRADOS NA NF ENTAO
                 if(matchValorNf.length == matchValorAud.length){
                     valorEsperado = valorBrutoPadrao * (1-descontoPadrao)
 
