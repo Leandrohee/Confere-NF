@@ -60,7 +60,7 @@ var fornecedores = {
                 desconto:"58,00%",
             },
             fordPesado: {
-                regex:/cargo/i,
+                regex:/cargo||ford/i,
                 desconto:"59,00%",
             }
         }
