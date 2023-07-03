@@ -27,4 +27,4 @@ function confereMarca(paginas){
     return resultadoMarca
 
 
-}
+}   
