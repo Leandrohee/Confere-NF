@@ -28,11 +28,12 @@ function confereOs(paginas){
                     possiveisOs[0] = osPadrao.replace("/","-")                   // 927-2023
                     possiveisOs[1] = new RegExp(osPadrao.replace("/","\\."))     // 927.2023
                     possiveisOs[2] = osPadrao.replace("/"," ")                   // 927 2023
-                    possiveisOs[3] = osPadrao.replace(/\/\d{4}/," ")            // 927
+                    possiveisOs[3] = osPadrao.replace(/\/\d{4}/," ")             // 927
                     possiveisOs[4] = osPadrao                                    // 927/2023
+                    possiveisOs[5] = osPadrao.replace(/\/20/,"/")                // 927/23
 
                     //TESTANDO TODOS AS POSSIVEIS OS E CONTANDO AS TENTATIVAS ENONTRADAS
-                    for(i=0; i<5 ; i++){
+                    for(i=0; i<6 ; i++){
                         if(primeiraPagina.match(possiveisOs[i])){
                             matchesOsNaNf.push(primeiraPagina.match(possiveisOs[i]))
                             contOsNaNf += 1

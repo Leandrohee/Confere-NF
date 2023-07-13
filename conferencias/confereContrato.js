@@ -3,8 +3,6 @@ function confereContrato(paginas){
     var resultadoContrato
     var contratoPadrao = null
 
-
-
     try{
         Object.keys(fornecedores).forEach(e=>{
             if(primeiraPagina.match(fornecedores[e].contrato) && primeiraPagina.match(fornecedores[e].nome)){

@@ -2,7 +2,7 @@ var fornecedores = {
     gilson: {
         nome: /rabelo\sco/i,
         ne: /2023NE[0]{0,5}12/gi,
-        contrato: /29\/2022/gi,
+        contrato: /29\/2022|29\/22/gi,
         linhas: {
             gmUtilitario: {
                regex: /s10\s/i,
@@ -45,7 +45,7 @@ var fornecedores = {
     parts: {
         nome: /parts\slub/i,
         ne: /2023NE[0]{0,5}04/gi,
-        contrato: /30\/2021/gi,
+        contrato: /30\/2021|30\/21/gi,
         linhas: {
             honda: {
                 regex:/honda/i,
@@ -68,7 +68,7 @@ var fornecedores = {
     alberto: {
         nome: /ALBERTO/i,
         ne: /2023NE[0]{0,5}67/gi,
-        contrato: /27\/2021/gi,
+        contrato: /27\/2021|27\/21/gi,
         linhas: {
             agrale:{
                 regex:/agrale/i,
@@ -83,7 +83,7 @@ var fornecedores = {
     erenice: {
         nome: /MR\sPECAS/i,
         ne: /2023NE[0]{0,5}06/gi,
-        contrato: /37\/2018/gi,
+        contrato: /37\/2018|37\/18/gi,
         linhas: {
             bmw: {
                 regex:/bmw/i,
@@ -94,7 +94,7 @@ var fornecedores = {
     robson: {
         nome: /robson/i,
         ne: /2023NE[0]{0,5}03/gi,
-        contrato: /29\/2021/gi,
+        contrato: /29\/2021|29\/21/gi,
         linhas: {
             gmLeve: {
                 regex:/cruze/i,
