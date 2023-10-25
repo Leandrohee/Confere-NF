@@ -21,24 +21,26 @@ function conferePrefixo(paginas){
         
         variaveisPrefixos[0] = prefixoPadrao                                //AO-56
         variaveisPrefixos[1]= prefixoPadrao.replace("-","\\.")              //AO.56
-        variaveisPrefixos[2]= prefixoPadrao.replace("-"," ")                //AO 56
+        variaveisPrefixos[2]= prefixoPadrao.replace("-"," ")                //AO 56  UM ESPACO
         variaveisPrefixos[3]= prefixoPadrao.replace("-","")                 //AO56
         variaveisPrefixos[4]= prefixoPadrao.replace("-"," - ")              //AO - 56 
         variaveisPrefixos[5]= prefixoPadrao.replace("-","- ")               //AO- 56
         variaveisPrefixos[6]= prefixoPadrao.replace("-"," -")               //AO -56
+        variaveisPrefixos[7]= prefixoPadrao.replace("-","  ")               //AO  56    DOIS ESPACOS
+        variaveisPrefixos[8]= prefixoPadrao.replace("-","   ")              //AO   56   TRES ESPACOS
 
         //COM TODAS VARIAVEIS DEFINIDAS TRANSFORMAR ELAS EM REGEX PARA EVITAR LETRAS MINUSCULAS
-        for(let i=0; i < 7 ;i++){
+        for(let i=0; i < variaveisPrefixos.length ;i++){
             regexVariaveisPrefixo[i]= new RegExp(variaveisPrefixos[i],"gi");
 
-            if(paginasMenosPrimeira.match(regexVariaveisPrefixo[i])){
-                //CASO ENCONTRAR 2 VEZES A MESMA VARIAVEL DAR O PUSH 2 VEZES
+            if(paginasMenosPrimeira.match(regexVariaveisPrefixo[i])){                                       //PROCURAR PREFIXO NA NF (PRIMEIRA PAGINA)
+                //CASO ENCONTRAR 2 VEZES A MESMA VARIAVEL DAR O PUSH NO MATCHPREFIXONODOC
                 for (let a = 0; a < (paginasMenosPrimeira.match(regexVariaveisPrefixo[i]).length) ; a++){
                     matchPrefixosoDoc.push(paginasMenosPrimeira.match(regexVariaveisPrefixo[i]))  
                 }
             }
-            if(primeiraPagina.match(regexVariaveisPrefixo[i])){
-                //CASO ENCONTRAR 2 VEZES A MESMA VARIAVEL DAR O PUSH 2 VEZES
+            if(primeiraPagina.match(regexVariaveisPrefixo[i])){                                             //PROCURAR PREFIXO NAS DEMAIS PAGINAS
+                //CASO ENCONTRAR 2 VEZES A MESMA VARIAVEL DAR O PUSH NO MATCHPREFIXONODOC
                 for (let a = 0; a < (primeiraPagina.match(regexVariaveisPrefixo[i]).length) ; a++){
                     matchPrefixoNaNf.push(primeiraPagina.match(regexVariaveisPrefixo[i])) 
                 }
@@ -46,12 +48,12 @@ function conferePrefixo(paginas){
         }
 
         //MOSTRANDO OS RESULTADOS POSSIVEIS
-        if(matchPrefixoNaNf.length >= 1){
-            if(matchPrefixosoDoc.length >= 2){
+        if(matchPrefixoNaNf.length >= 1){                                                           //SE ACHAR O PREFIXO NA NOTA FISCAL PROSSEGUIR
+            if(matchPrefixosoDoc.length >= 2){                                                      //SE ACHAR O PREFIXO 2 VEZES NO DOCUMENTO QUER DIZER QUE ESTA TUDO OK
                 resultadoPrefixo =`OK (${prefixoPadrao})`
             }
             else{
-                resultadoPrefixo =`Prefixo ${prefixoPadrao} correto na NF e errado no Pedido`
+                resultadoPrefixo =`Prefixo ${prefixoPadrao} correto na NF e errado no Pedido`       //SE ACHAR UMA VEZ QUER DIZER QUE O PEDIDO ESTA ERADO
             }
         }
         else{
