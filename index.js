@@ -5,7 +5,7 @@ pdfTeste = '/pdfTeste.pdf'
 var pdfLoad
 var paginasPdf
 
-//AQUI COMEÇA O PDF.JS
+//AQUI COMEÇA O PDF.JS                                                              *ESTÁ COMENTADO POIS ESTOU USANDO A FUNCAO ABAIXO COMO ASYNC AWAIT*
 // function lerPdf(pdfLoad){ 
 //     const paginas = []                                     
 //     pdfLoad.promise.then((pdf)=>{

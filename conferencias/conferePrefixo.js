@@ -2,7 +2,7 @@ function conferePrefixo(paginas){
     var primeiraPagina = paginas[0]
     var nPaginas = paginas.length
     var paginasMenosPrimeira = ""
-    var regexPrefixo = /prefixo\s?:\s([a-z]{2,4}\s-\s\d{1,3})/gi
+    var regexPrefixo = /prefixo\s:\s([a-z]{2,5}\s-\s\d{1,3})/gi
     var matchPrefixoNaOs, matchPrefixoNaNf =[], matchPrefixosoDoc = []
     var prefixoPadrao, variaveisPrefixos = [], regexVariaveisPrefixo = []
     var resultadoPrefixo

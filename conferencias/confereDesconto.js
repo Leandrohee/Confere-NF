@@ -20,6 +20,8 @@ function confereDesconto(paginas){
                 matchLinhaNaNf = primeiraPagina.match(regexLinhas)
                 matchFornecedorNaNf = primeiraPagina.match(regexFornecedor)
 
+                console.log(matchLinhaNaNf)
+
                 if(matchFornecedorNaNf && matchLinhaNaNf){
                     descontoPadrao = fornecedores[forn].linhas[lin].desconto
                 }
@@ -34,13 +36,16 @@ function confereDesconto(paginas){
             variaveisDesconto[3] = descontoPadrao.replace(/,\d{2}/g,",0")            //49,2% || 50,0%
             variaveisDesconto[4] = descontoPadrao.replace(/,\d{2}/g,".0")            //49.2% || 50.0%
 
-            if(descontoPadrao[0] == 0){
+            if(descontoPadrao[0] == 0){                                                //Para BMW - Maria Erenice
                 variaveisDesconto[5] = descontoPadrao.slice(1)                         //7,00%
                 variaveisDesconto[6] = descontoPadrao.replaceAll(/[0,]/g,"")           //7%
             }
 
-            for(let i=0; i<7; i++){
-                if(primeiraPagina.match(variaveisDesconto[i])){
+            console.log(variaveisDesconto)
+
+            for(let i=0; i<variaveisDesconto.length; i++){                                                  //Pega o tamanho do Array 'variaveisDesconto e faz um loop sem cima dq qtd'
+                console.log(primeiraPagina.match(variaveisDesconto[i]))
+                if(primeiraPagina.match(variaveisDesconto[i])){    
                     for(let a=0; a<(primeiraPagina.match(variaveisDesconto[i]).length); a++){
                         matchDescontoNaNf.push(primeiraPagina.match(variaveisDesconto[i])[a])
                     }
