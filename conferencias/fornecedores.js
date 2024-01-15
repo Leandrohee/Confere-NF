@@ -1,7 +1,7 @@
 var fornecedores = {
     gilson: {
         nome: /rabelo\sco/i,
-        ne: /2023NE[0]{0,5}12/gi,
+        ne: /2024NE[0]{0,5}27/gi,
         contrato: /29\/2022|29\/22/gi,
         linhas: {
             gmUtilitario: {
@@ -44,7 +44,7 @@ var fornecedores = {
     },
     parts: {
         nome: /parts\slub/i,
-        ne: /2023NE[0]{0,5}04/gi,
+        ne: /2024NE[0]{0,5}30/gi,
         contrato: /30\/2021|30\/21/gi,
         linhas: {
             honda: {
@@ -67,7 +67,7 @@ var fornecedores = {
     },
     alberto: {
         nome: /ALBERTO/i,
-        ne: /2023NE[0]{0,5}67/gi,
+        ne: /2024NE[0]{0,5}34/gi,
         contrato: /27\/2021|27\/21/gi,
         linhas: {
             agrale:{
@@ -93,7 +93,7 @@ var fornecedores = {
     },
     robson: {
         nome: /robson/i,
-        ne: /2023NE[0]{0,5}03/gi,
+        ne: /2024NE[0]{0,5}35/gi,
         contrato: /29\/2021|29\/21/gi,
         linhas: {
             gmLeve: {
