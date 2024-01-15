@@ -20,8 +20,6 @@ function confereDesconto(paginas){
                 matchLinhaNaNf = primeiraPagina.match(regexLinhas)
                 matchFornecedorNaNf = primeiraPagina.match(regexFornecedor)
 
-                console.log(matchLinhaNaNf)
-
                 if(matchFornecedorNaNf && matchLinhaNaNf){
                     descontoPadrao = fornecedores[forn].linhas[lin].desconto
                 }
@@ -41,10 +39,7 @@ function confereDesconto(paginas){
                 variaveisDesconto[6] = descontoPadrao.replaceAll(/[0,]/g,"")           //7%
             }
 
-            console.log(variaveisDesconto)
-
             for(let i=0; i<variaveisDesconto.length; i++){                                                  //Pega o tamanho do Array 'variaveisDesconto e faz um loop sem cima dq qtd'
-                console.log(primeiraPagina.match(variaveisDesconto[i]))
                 if(primeiraPagina.match(variaveisDesconto[i])){    
                     for(let a=0; a<(primeiraPagina.match(variaveisDesconto[i]).length); a++){
                         matchDescontoNaNf.push(primeiraPagina.match(variaveisDesconto[i])[a])

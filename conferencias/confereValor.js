@@ -70,8 +70,16 @@ function confereValor(paginas){
                 if(matchValorNf.length == matchValorAud.length){
                     valorEsperado = valorBrutoPadrao * (1-descontoPadrao)
 
+                    console.log((valorEsperado.toFixed(2)-valorComDescontoPadrao).toFixed(2))
+
                     if(valorEsperado.toFixed(2) == valorComDescontoPadrao){
                         resultadoValor = `OK  (R$ ${valorEsperado.toFixed(2)}) `
+                    }
+                    else if((valorEsperado.toFixed(2)-valorComDescontoPadrao).toFixed(2) == 0.01){
+                        resultadoValor = `OK (1 centavo mais barato -> R$ ${valorEsperado.toFixed(2)} )`
+                    }
+                    else if((valorComDescontoPadrao-valorEsperado.toFixed(2)).toFixed(2) == 0.01){
+                        resultadoValor = `OK (1 centavo mais caro -> R$ ${valorEsperado.toFixed(2)})`
                     }
                     else{
                         resultadoValor = `Valor esperado: R$ ${valorEsperado.toFixed(2)} valor da NF: R$ ${valorComDescontoPadrao}`
